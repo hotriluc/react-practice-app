@@ -7,13 +7,12 @@ function App() {
 
   const addToUserListHandler = (user) => {
     setUsersList( prev => [user, ...prev])
-    console.log(usersList)
   }
 
   return (
     <div>
       <AddUser addUserHandler={addToUserListHandler}/>
-      {usersList.length && <UsersList users={usersList} />}
+      {usersList.length > 0 && <UsersList users={usersList} />}
     </div>
   );
 }
